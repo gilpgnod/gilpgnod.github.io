@@ -1,6 +1,6 @@
 /* Espera 11 minutos después de hacer los cambios en tu sitio, para depués
  * actualizar este archivo. */
-const CACHE = "gilpnod-1.01";
+const CACHE = "gilpnod-1.02";
 
 /** Archivos requeridos para que la aplicación funcione fuera de línea. */
 const ARCHIVOS = [

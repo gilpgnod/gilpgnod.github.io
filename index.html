@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>GilPG Nod</title>
+ <link rel="icon" sizes="32x32" href="/favicon.ico">
+ <meta name="theme-color" content="#000000">
+ <link rel="manifest" href="/site.webmanifest">
+ <meta name="apple-mobile-web-app-title" content="GilPGEdit">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="default">
+ <link rel="apple-touch-icon" href="/img/icono2048.png">
+ <link rel="apple-touch-icon" sizes="256x256" href="/img/icono256.png">
+ <link rel="apple-touch-icon" sizes="1024x1024" href="/img/icono1024.png">
+ <link rel="apple-touch-icon" sizes="2048x2048" href="/img/icono2048.png">
+ <script src="lib/codemirror.js"></script>
+ <link rel="stylesheet" href="lib/codemirror.css">
+ <script src="addon/hint/show-hint.js"></script>
+ <script src="addon/hint/javascript-hint.js"></script>
+ <script src="mode/javascript/javascript.js"></script>
+ <script src="mode/css/css.js"></script>
+ <link rel="stylesheet" href="estilos.css">
+ <link rel="stylesheet" href="theme/cobalt.css">
+</head>
+<body>
+ <header>
+  <h1>GilPG Nod</h1>
+  <label id="lblabrir">
+   <u>Abrir</u>
+   <input id="abrir" type="file" accept="text/javascript">
+  </label>
+  <a id="guardar" download="index.js">Descargar</a>
+  <button type="button">Ejecutar</button>
+  <fieldset>
+   <legend>Mostrar</legend>
+   <label>
+    <input id="códigoMuestra" type="checkbox" checked>
+    Código
+   </label>
+   <label>
+    <input id="ventanaMuestra" type="checkbox" checked>
+    Consola
+   </label>
+  </fieldset>
+  <small>
+   <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
+      alt="Licencia Creative Commons" style="border-width:0"
+      src="img/80x15.png" /></a><br />Esta
+   obra está bajo una <a rel="license"
+     href="http://creativecommons.org/licenses/by/4.0/">Licencia Creative
+    Commons
+    Atribución 4.0 Internacional</a>.
+  </small>
+ </header>
+ <div class="contenido">
+  <div id="código"></div>
+  <section id="ventanaSec">
+   <h1>Consola</h1>
+   <iframe title="index.js"></iframe>
+  </section>
+ </div>
+ <script src="index.js"></script>
+</body>
+</html>

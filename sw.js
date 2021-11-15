@@ -1,6 +1,7 @@
 /* Espera 11 minutos después de hacer los cambios en tu sitio, para depués
  * actualizar este archivo. */
-const CACHE = "gilpnod-1.02";
+const CACHE = "gilpgnod";
+const VERSION = "1.00"
 
 /** Archivos requeridos para que la aplicación funcione fuera de línea. */
 const ARCHIVOS = [
@@ -461,10 +462,15 @@ self.addEventListener("fetch", evt => {
 self.addEventListener("activate", () => console.log("Service Worker activo."));
 
 async function cargaCache() {
-  console.log("Intentando cargar cache: " + CACHE);
-  const cache = await caches.open(CACHE);
-  await cache.addAll(ARCHIVOS);
-  console.log("Cache cargado: " + CACHE);
+ console.log("Intentando cargar cache:", CACHE)
+ const keys = await caches.keys()
+ for (const key of keys) {
+  await caches.delete(key)
+ }
+ const cache = await caches.open(CACHE)
+ await cache.addAll(ARCHIVOS)
+ console.log("Cache cargado:", CACHE)
+ console.log("Versión:", VERSION)
 }
 
 async function usaCache(evt) {

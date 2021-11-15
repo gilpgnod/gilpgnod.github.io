@@ -10,12 +10,12 @@ function question(mensaje) {
  * @param {string} mensaje
  */
 function questionInt(mensaje) {
- return parseInt(prompt(mensaje) || "", 10)
+ return parseInt(prompt(mensaje || "") || "", 10)
 }
 /**
  * @param {string} mensaje
  */
 function questionFloat(mensaje) {
- return parseFloat(prompt(mensaje) || "")
+ return parseFloat(prompt(mensaje || "") || "")
 }
 console.clear()

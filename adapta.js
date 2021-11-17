@@ -2,8 +2,8 @@ const __cl = console.clear
 const __lo = console.log
 const __err = console.error
 const __pre = document.getElementById("__pre")
-window.onerror = (_evt, _src, linea, col, error) => {
- console.error("linea: " + linea + " columna: " + col)
+window.onerror = (_evt, _src, lin, col, error) => {
+ console.error((lin ? `Línea: ${lin - 1}` : ""), (col ? `columna: ${col}` : ""))
  console.error(error)
 };
 window.console.clear =

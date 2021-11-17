@@ -1,7 +1,7 @@
 /* Espera 11 minutos después de hacer los cambios en tu sitio, para depués
  * actualizar este archivo. */
 const CACHE = "gilpgnod";
-const VERSION = "1.00"
+const VERSION = "1.01"
 
 /** Archivos requeridos para que la aplicación funcione fuera de línea. */
 const ARCHIVOS = [

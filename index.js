@@ -154,10 +154,150 @@ async function registraServiceWorker() {
  * @param {boolean} expande
  */
 function codigoAdapta(src, expande) {
- return (/* html */ `<pre id="__pre"></pre><script src="question.js"></script>` +
-  (expande ? /* html */ `<script src="adapta.js"></script>` : "")
+ return (/* html */ `<pre id="__pre"></pre><script>console.clear()</script>` +
+  (expande ?
+    /* html */ `<script>declara();debugger` :
+   `<script>debugger`)
   + /* html */
-  `<script>debugger
+  `
 ${src}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function declara() {
+ const __cl = console.clear
+const __lo = console.log
+const __err = console.error
+const __pre = document.getElementById("__pre")
+window.onerror = (_evt, _src, lin, col, error) => {
+ console.error((lin ? "Línea: " + (lin - 1) : ""), (col ? "columna: " + col : ""))
+ console.error(error)
+};
+window.console.clear =
+ /** @param {any[]} parametros */
+ (...parametros) => {
+  __cl.apply(null, parametros)
+  if (__pre) {
+   __pre.textContent = ""
+  }
+ }
+window.console.log =
+ /** @param {any[]} parametros */
+ (...parametros) => {
+  __lo.apply(null, parametros);
+  const div = document.createElement("div")
+  div.textContent = parametros.join(" ")
+  if (__pre) {
+   __pre.append(div);
+  }
+ };
+window.console.error =
+ /** @param {any[]} parametros */
+ (...parametros) => {
+  const div = document.createElement("div")
+  div.style.color = "red"
+  div.textContent = parametros.join(" ")
+  if (__pre) {
+   __pre.append(div)
+  }
+  __err.apply(null, parametros);
+ }
+}
+/**
+ * @param {string} mensaje
+ */
+ function question(mensaje) {
+ const respuesta = prompt(mensaje)
+ console.log(mensaje + respuesta)
+ return respuesta || ""
+}
+/**
+ * @param {string} mensaje
+ */
+function questionInt(mensaje) {
+ return parseInt(prompt(mensaje || "") || "", 10)
+}
+/**
+ * @param {string} mensaje
+ */
+function questionFloat(mensaje) {
+ return parseFloat(prompt(mensaje || "") || "")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Programa terminado
 </script>`)
 }

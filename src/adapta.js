@@ -5,7 +5,10 @@ const ___err = console.error
 window.onerror = (_evt, _src, lin, col, error) => {
  console.error((lin ? "Línea: " + (lin - 113) : ""), (col ? "columna: " + col : ""))
  console.error(error)
-};
+}
+ window.addEventListener('unhandledrejection', event => {
+  console.error(event)
+ })
 window.console.clear =
  /** @param {any[]} parametros */
  (...parametros) => {
@@ -22,7 +25,7 @@ window.console.log =
    const div = ___pre.appendChild(document.createElement("div"))
    div.textContent = parametros.join(" ")
   }
- };
+ }
 window.console.error =
  /** @param {any[]} parametros */
  (...parametros) => {

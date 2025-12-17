@@ -282,6 +282,9 @@ function __declara() {
   console.error(event)
   console.error(error)
  };
+ window.addEventListener('unhandledrejection', event => {
+  console.error(event)
+ })
  window.console.clear =
   /** @param {any[]} parametros */
   (...parametros) => {
@@ -290,9 +293,6 @@ function __declara() {
     ___pre.textContent = ""
    }
   }
- window.addEventListener('unhandledrejection', event => {
-  console.error(event)
- })
  window.console.log =
   /** @param {any[]} parametros */
   (...parametros) => {
@@ -466,4 +466,12 @@ ${src}
 
 
 
- 
+ } catch(e) {console.error(e)}
+ // Programa terminado
+}
+</script>`)
+  }
+
+ },
+ undefined
+)

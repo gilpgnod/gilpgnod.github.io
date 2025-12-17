@@ -1,0 +1,129 @@
+{
+ "short_name": "GilPGNod",
+ "name": "GilPG Nod",
+ "id": "/index.html",
+ "start_url": "/index.html",
+ "display": "standalone",
+ "theme_color": "#000000",
+ "background_color": "#ffffff",
+ "display_override": [
+  "window-controls-overlay"
+ ],
+ "description": "Desarrolla y depura aplicaciones sencillas, parecidas a Node.js, en línea.",
+ "icons": [
+  {
+   "purpose": "any",
+   "src": "img/icono2048.png",
+   "sizes": "2048x2048",
+   "type": "image/png"
+  },
+  {
+   "purpose": "any",
+   "src": "img/icono1024.png",
+   "sizes": "1024x1024",
+   "type": "image/png"
+  },
+  {
+   "purpose": "any",
+   "src": "img/icono256.png",
+   "sizes": "256x256",
+   "type": "image/png"
+  },
+  {
+   "purpose": "maskable",
+   "sizes": "2730",
+   "src": "img/maskable_icon.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "maskable",
+   "sizes": "48x48",
+   "src": "img/maskable_icon_x48.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "maskable",
+   "sizes": "72x72",
+   "src": "img/maskable_icon_x72.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "maskable",
+   "sizes": "96x96",
+   "src": "img/maskable_icon_x96.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "maskable",
+   "sizes": "128x128",
+   "src": "img/maskable_icon_x128.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "maskable",
+   "sizes": "192x192",
+   "src": "img/maskable_icon_x192.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "maskable",
+   "sizes": "384x384",
+   "src": "img/maskable_icon_x384.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "maskable",
+   "sizes": "512x512",
+   "src": "img/maskable_icon_x512.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "any",
+   "sizes": "2730",
+   "src": "img/maskable_icon.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "any",
+   "sizes": "48x48",
+   "src": "img/maskable_icon_x48.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "any",
+   "sizes": "72x72",
+   "src": "img/maskable_icon_x72.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "any",
+   "sizes": "96x96",
+   "src": "img/maskable_icon_x96.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "any",
+   "sizes": "128x128",
+   "src": "img/maskable_icon_x128.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "any",
+   "sizes": "192x192",
+   "src": "img/maskable_icon_x192.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "any",
+   "sizes": "384x384",
+   "src": "img/maskable_icon_x384.png",
+   "type": "image/png"
+  },
+  {
+   "purpose": "any",
+   "sizes": "512x512",
+   "src": "img/maskable_icon_x512.png",
+   "type": "image/png"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "name": "gilpgnod.github.io",
+ "version": "2.0.0",
+ "description": "Sitio para crear aplicaciones simples tipo Node.js desde navegadores.",
+ "type": "module",
+ "private": true,
+ "staticFiles": {
+  "staticPath": "static"
+ },
+ "scripts": {
+  "clean": "node clean.js",
+  "start": "parcel \"./src/*.html\" --dist-dir ./docs",
+  "build": "parcel build \"./src/*.html\" --dist-dir ./docs",
+  "buildjs": "node build.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/gilpgnod/gilpgnod.github.io.git"
+ },
+ "keywords": [],
+ "author": "Gilberto Pacheco Gallegos",
+ "license": "Apache License Version 2.0",
+ "bugs": {
+  "url": "https://github.com/gilpgnod/gilpgnod.github.io/issues"
+ },
+ "homepage": "https://github.com/gilpgnod/gilpgnod.github.io#readme",
+ "devDependencies": {
+  "@parcel/packager-raw-url": "^2.16.3",
+  "@parcel/service-worker": "^2.16.3",
+  "@parcel/transformer-inline-string": "^2.16.3",
+  "@parcel/transformer-webmanifest": "^2.16.3",
+  "parcel": "^2.16.3",
+  "parcel-reporter-static-files-copy": "^1.5.3"
+ },
+ "dependencies": {
+  "@codemirror/commands": "^6.10.0",
+  "@codemirror/lang-html": "^6.4.11",
+  "@codemirror/search": "^6.5.11",
+  "@codemirror/state": "^6.5.2",
+  "@codemirror/view": "^6.39.2",
+  "cm6-theme-gruvbox-dark": "^0.2.0",
+  "cm6-theme-gruvbox-light": "^0.2.0"
+ }
+}

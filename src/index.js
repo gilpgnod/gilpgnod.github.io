@@ -45,6 +45,12 @@ import { selectedFiles } from "/gilpghtml/selectedFiles.js"
 import {
  serviceWorkerRegister
 } from "/gilpghtml/serviceWorkerRegister.js"
+// @ts-ignore
+import adaptText from 'bundle-text:./adapt.js'
+// @ts-ignore
+import expandedQuestionText from 'bundle-text:./expandedQuestion.js'
+// @ts-ignore
+import questionText from 'bundle-text:./question.js'
 
 tryCatch(
  () => {
@@ -261,135 +267,47 @@ tryCatch(
     URL.createObjectURL(new Blob([text], { type: "text/html" }))
   }
 
+  window.onerror = function (
+  /** @type { Event | string} */ event,
+  /** @type {string} */ _src,
+  /** @type {number} */ línea,
+  /** @type {number} */ col,
+  /** @type {Error} */ error
+  ) {
+   console.error(`[línea: ${línea}, columna: ${col}] `)
+   console.error(event)
+   console.error(error)
+  }
+
+  window.addEventListener('unhandledrejection', event => console.error(event))
+
   /**
    * @param {string} src
-   * @param {boolean} expande
+   * @param {boolean} expand
    */
-  function codeAdapt(src, expande) {
-   const expansion = expande ? /* html */ `__declara();` : ""
+  function codeAdapt(src, expand) {
+   const adaption = expand ? adaptText : ""
+   const questionDefinitions = expand ? expandedQuestionText : questionText
    return (/* html */
     `<pre id="___pre"></pre>
 <script>
- console.clear()
  const ___pre = document.getElementById("___pre")
  const ___lo = console.log
- ${expansion}
-function __declara() {
- const ___cl = console.clear
- const ___err = console.error
- window.onerror = (event, _src, lin, col, error) => {
-  console.error((lin ? "Línea: " + (lin - 113) : ""), (col ? "columna: " + col : ""))
-  console.error(event)
-  console.error(error)
- };
- window.addEventListener('unhandledrejection', event => {
-  console.error(event)
- })
- window.console.clear =
-  /** @param {any[]} parametros */
-  (...parametros) => {
-   ___cl.apply(null, parametros)
-   if (___pre) {
-    ___pre.textContent = ""
-   }
-  }
- window.console.log =
-  /** @param {any[]} parametros */
-  (...parametros) => {
-   ___lo.apply(null, parametros);
-   if (___pre) {
-    const div = ___pre.appendChild(document.createElement("div"))
-    div.textContent = parametros.join(" ")
-   }
-  };
- window.console.error =
-  /** @param {any[]} parametros */
-  (...parametros) => {
-   ___err.apply(null, parametros);
-   if (___pre) {
-    const div = ___pre.appendChild(document.createElement("div"))
-    div.style.color = "red"
-    div.textContent = parametros.join(" ")
-   }
-  }
-}
-
-/**
-* @param {string} mensaje
-* @returns {Promise<string>}
-*/
-async function question(mensaje) {
- return new Promise((resolve, reject) => {
-  try {
-   const respuesta = prompt(mensaje)
-   try {
-    ___lo.call(null, "%c" + mensaje + respuesta, "color:blue;font-style:oblique");
-    if (___pre) {
-     const div = ___pre.appendChild(document.createElement("div"))
-     div.style.color = "blue"
-     div.style.fontStyle = "oblique"
-     div.textContent = mensaje + respuesta
-    }
-    setTimeout(() => resolve(respuesta || ""), 60)
-   } catch (e) {
-    reject(e)
-   }
-  } catch (e) {
-   reject(e)
-  }
- })
-}
-
-/**
- * @param {string} mensaje
- */
-async function questionInt(mensaje) {
- return parseInt(await question(mensaje) || "", 10)
-}
-
-/**
- * @param {string} mensaje
- */
-async function questionFloat(mensaje) {
- return parseFloat(await question(mensaje) || "")
-}
-
-async function clear() {
- return new Promise((resolve, reject) => {
-  try {
-   console.clear()
-   setTimeout(() => resolve(undefined), 60)
-  } catch (e) {
-   reject(e)
-  }
- })
-}
-
-/** @param {any[]} parametros */
-async function log(...parametros) {
- return new Promise((resolve, reject) => {
-  try {
-   console.log(...parametros);
-   setTimeout(() => resolve(undefined), 60)
-  } catch (e) {
-   reject(e)
-  }
- })
-}
-
-/** @param {any[]} parametros */
-async function error(...parametros) {
- return new Promise((resolve, reject) => {
-  try {
-   console.log(...parametros);
-   setTimeout(() => resolve(undefined), 60)
-  } catch (e) {
-   reject(e)
-  }
- })
-}
+ ${adaption}
+ ${questionDefinitions}
+ console.clear()
 </script>
-<script>__ejecuta();async function __ejecuta(){try {
+<script>{try {
+
+
+
+
+
+ 
+
+
+
+
 debugger;
 ${src}
 

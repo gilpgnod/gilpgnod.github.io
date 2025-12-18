@@ -1,1 +1,3 @@
+change editor sintax to javascript
+add heading to created html
 i18n missing

@@ -1,0 +1,64 @@
+<style>
+    #console-box {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: 'Consolas', monospace;
+        height: 300px;
+        overflow-y: auto;
+        border: 1px solid #333;
+    }
+    .log-error { color: #f44336; font-weight: bold; }
+    .log-warn { color: #ffeb3b; }
+    .log-info { color: #2196f3; }
+
+/* Colores ANSI Estándar */
+.ansi-black   { color: #000000; }
+.ansi-red     { color: #cd3131; }
+.ansi-green   { color: #0dbc79; }
+.ansi-yellow  { color: #e5e510; }
+.ansi-blue    { color: #2472c8; }
+.ansi-magenta { color: #bc3fbc; }
+.ansi-cyan    { color: #11a8cd; }
+.ansi-white   { color: #e5e5e5; }
+
+/* Versiones Brillantes */
+.ansi-bright-black   { color: #666666; }
+.ansi-bright-red     { color: #f14c4c; }
+.ansi-bright-green   { color: #23d18b; }
+.ansi-bright-yellow  { color: #f5f543; }
+.ansi-bright-blue    { color: #3b8eea; }
+.ansi-bright-magenta { color: #d670d6; }
+.ansi-bright-cyan    { color: #29b8db; }
+.ansi-bright-white   { color: #e5e5e5; }
+
+/* Estilos de Fuente */
+.ansi-bold { font-weight: bold; }
+.ansi-italic { font-style: italic; }
+.ansi-underline { text-decoration: underline; }
+
+</style>
+
+<pre id="console-box"></pre>
+
+<script>
+    // Inicialización
+    const terminal = document.getElementById('console-box');
+    const myConsole = new WebConsole(terminal);
+
+    // Pruebas de métodos
+    myConsole.log("Iniciando sistema...");
+    myConsole.info("Versión 1.0.0 activa");
+    myConsole.warn("Memoria baja detectada");
+    myConsole.error("Fallo al conectar con el servidor");
+    
+    myConsole.time('proceso-pesado');
+    myConsole.count('iteración');
+    myConsole.count('iteración');
+    myConsole.timeEnd('proceso-pesado');
+
+    myConsole.table([{ id: 1, user: 'Admin' }, { id: 2, user: 'Guest' }]);
+</script>
+
+

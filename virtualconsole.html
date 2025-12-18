@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Consola Virtual JS</title>
+ <style>
+  /* Estilos de la Consola */
+  #console-container {
+   margin: 20px;
+   border: 1px solid #333;
+   border-radius: 8px;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  #console-display {
+   background: #1e1e1e;
+   color: #d4d4d4;
+   padding: 15px;
+   margin: 0;
+   height: 400px;
+   overflow-y: auto;
+   font-family: 'Fira Code', 'Consolas', monospace;
+   font-size: 13px;
+   line-height: 1.6;
+   white-space: pre-wrap;
+   word-break: break-all;
+  }
+
+  .controls {
+   background: #2d2d2d;
+   padding: 10px;
+   display: flex;
+   gap: 10px;
+  }
+
+  button {
+   padding: 8px 12px;
+   cursor: pointer;
+   border: none;
+   border-radius: 4px;
+   background: #444;
+   color: white;
+   transition: background 0.2s;
+  }
+
+  button:hover {
+   background: #666;
+  }
+
+  .btn-download {
+   background: #2e7d32;
+  }
+
+  .btn-download:hover {
+   background: #388e3c;
+  }
+
+  /* Colores por tipo de mensaje */
+  .console-error {
+   color: #f44747;
+   border-left: 3px solid #f44747;
+   padding-left: 5px;
+  }
+
+  .console-warn {
+   color: #dcdcaa;
+   border-left: 3px solid #dcdcaa;
+   padding-left: 5px;
+  }
+
+  .console-info {
+   color: #4fc1ff;
+  }
+
+  .console-log {
+   color: #d4d4d4;
+  }
+
+  .console-debug {
+   color: #b5cea8;
+   font-style: italic;
+  }
+ </style>
+</head>
+
+<body>
+
+ <div id="console-container">
+  <div class="controls">
+   <button onclick="vConsole.clear()">Limpiar Pantalla</button>
+   <button class="btn-download" onclick="vConsole.downloadLog()">Descargar
+    .txt</button>
+  </div>
+  <pre id="console-display"></pre>
+ </div>
+
+ <script>
+  class VirtualConsole {
+   constructor(outputElement) {
+    this.output = outputElement
+    this.counters = {}
+    this.timers = {}
+    this.groupLevel = 0
+   }
+
+   initGlobalCapture() {
+    window.addEventListener('error', (event) => {
+     this.error(`Uncaught ${event.error?.stack || event.message}`)
+    })
+
+    window.addEventListener('unhandledrejection', (event) => {
+     this.error(`Uncaught (in promise): ${event.reason}`)
+    })
+    this.info("Captura de errores globales activada.")
+   }
+
+   #print(message, type = 'log') {
+    const span = document.createElement('span')
+    span.className = `console-line console-${type}`
+
+    const timestamp = new Date().toLocaleTimeString([], { hour12: false })
+    const indent = "  ".repeat(this.groupLevel)
+
+    let content
+    if (message instanceof Error) {
+     content = `${message.name}: ${message.message}\n${message.stack}`
+    } else if (typeof message === 'object') {
+     try {
+      content = JSON.stringify(message, null, 2)
+     } catch (e) { content = "[Circular Object]" }
+    } else {
+     content = message
+    }
+
+    span.textContent = `${timestamp} ${indent}[${type.toUpperCase()}] ${content}\n`
+    this.output.appendChild(span)
+    this.output.scrollTop = this.output.scrollHeight
+   }
+
+   // Implementación de métodos de la Interfaz Console
+   log(...args) { args.forEach(arg => this.#print(arg, 'log')) }
+   info(...args) { args.forEach(arg => this.#print(arg, 'info')) }
+   warn(...args) { args.forEach(arg => this.#print(arg, 'warn')) }
+   error(...args) { args.forEach(arg => this.#print(arg, 'error')) }
+   debug(...args) { args.forEach(arg => this.#print(arg, 'debug')) }
+
+   assert(condition, ...args) {
+    if (!condition) this.#print(`Assertion failed: ${args.join(' ') || 'console.assert'}`, 'error')
+   }
+
+   clear() {
+    this.output.innerHTML = ''
+    this.groupLevel = 0
+   }
+
+   count(label = 'default') {
+    this.counters[label] = (this.counters[label] || 0) + 1
+    this.#print(`${label}: ${this.counters[label]}`, 'log')
+   }
+
+   time(label = 'default') { this.timers[label] = performance.now() }
+
+   timeEnd(label = 'default') {
+    if (this.timers[label]) {
+     const diff = performance.now() - this.timers[label]
+     this.#print(`${label}: ${diff.toFixed(3)}ms`, 'log')
+     delete this.timers[label]
+    }
+   }
+
+   group(label = 'group') { this.#print(`▼ ${label}`, 'log'); this.groupLevel++ }
+   groupEnd() { if (this.groupLevel > 0) this.groupLevel-- }
+
+   table(data) {
+    this.#print("--- Table Data ---", 'info')
+    this.#print(data, 'log')
+   }
+
+   // Función extra para descargar el contenido
+   downloadLog() {
+    const text = this.output.innerText
+    const blob = new Blob([text], { type: 'text/plain' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `console-log-${new Date().getTime()}.txt`
+    a.click()
+    URL.revokeObjectURL(url)
+   }
+  }
+
+  // Inicialización
+  const vConsole = new VirtualConsole(document.getElementById('console-display'))
+  vConsole.initGlobalCapture()
+
+  // Pruebas automáticas
+  vConsole.log("Consola lista para depuración.")
+  vConsole.group("Pruebas Iniciales")
+  vConsole.warn("Este es un aviso preventivo.")
+  vConsole.table({ id: 101, status: "OK", tags: ["web", "dev"] })
+  vConsole.groupEnd()
+
+  // Simular un error después de 2 segundos
+  setTimeout(() => {
+   console.log(variableNoDefinida)
+  }, 2000);
+
+ </script>
+</body>
+
+</html>

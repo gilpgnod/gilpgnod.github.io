@@ -13,7 +13,7 @@
  window.console.clear =
   /** @param {any[]} parametros */
   (...parametros) => {
-   ___cl.apply(null, parametros)
+   ___cl.apply(null, [])
    if (___pre) {
     ___pre.textContent = ""
    }

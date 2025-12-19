@@ -1,3 +1,4 @@
-change editor sintax to javascript
-add heading to created html
+change ansiMap to Map
+fix ansi colors
+fix console methods
 i18n missing

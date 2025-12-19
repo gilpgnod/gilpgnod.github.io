@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang=es><script type=importmap>{"imports":{"5VnLw":"/sw.js"}}</script><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>GilPG Nod</title><meta name=description content="Desarrolla y depura aplicaciones sencillas, parecidas a Node.js, en línea."><meta name=og:image content=https://gilpgnod.github.io/icono2048.png><link rel=icon sizes=32x32 href=/favicon.8551224e.ico><meta name=theme-color content=#000000><link rel=manifest href=/site.webmanifest><link rel=stylesheet href=/gilpgnod.github.io.961441ef.css><body>
+
+ <header>
+  <button id=abrirArchivo type=button popovertarget=archivo>
+   Archivo
+  </button>
+  <h1>GilPG Nod</h1>
+  <button id=ejecutar type=button>Ejecutar</button>
+
+ </header>
+
+ <section id=archivo popover=auto>
+  <ul>
+   <li>
+    <label id=lblabrir>
+     <u>Abrir</u>
+     <input id=abrir type=file accept=text/javascript>
+    </label>
+   </li>
+   <li>
+    <a id=guardar download=index.js>Descargar</a>
+   </li>
+   <li>
+    <fieldset>
+     <legend>Mostrar</legend>
+     <p>
+      <label>
+       <input id=codeShow type=checkbox checked>
+       Código
+      </label>
+     </p>
+     <p>
+      <label>
+       <input id=windowShow type=checkbox checked>
+       Ventana
+      </label>
+     </p>
+    </fieldset>
+   </li>
+   <li>
+    <button type=button onclick="if (!aboutDialog.open) aboutDialog.showModal()">
+     Acerca de GilPG Edit
+    </button>
+   </li>
+  </ul>
+ </section>
+
+ <div class=content>
+  <section id=code hidden>
+   <small>Código fuente</small>
+  </section>
+  <iframe title=Ventana></iframe>
+ </div>
+
+ <dialog id=aboutDialog>
+  <h2>Acerca de GilPG Nod</h2>
+  <p>Versión 2.1</p>
+  <p>
+   Desarrolla y depura aplicaciones sencillas, parecidas a Node.js, en línea.
+  </p>
+  <h3>Licencia</h3>
+  <p>
+   <a rel=license href=http://creativecommons.org/licenses/by/4.0/><img alt="Licencia Creative Commons" style=border-width:0 src=/80x15.76fdda20.png></a><br>
+   Esta
+   <span xmlns:dct=http://purl.org/dc/terms/ href=http://purl.org/dc/dcmitype/InteractiveResource rel=dct:type>obra</span>
+   de
+   <a xmlns:cc=http://creativecommons.org/ns# href=https://gilpgedit.github.io property=cc:attributionName rel=cc:attributionURL>Gilberto Pacheco Gallegos</a>
+   está bajo una
+   <a rel=license href=http://creativecommons.org/licenses/by/4.0/>Licencia
+    Creative Commons Atribución 4.0 Internacional</a>.
+  </p>
+  <h3>Licencias de terceros</h3>
+  <dl>
+   <dt><a href=https://codemirror.net/ target=_blank rel="noopener noreferrer">CodeMirror</a></dt>
+   <dd><a href=https://github.com/codemirror/dev/blob/main/LICENSE target=_blank rel="noopener noreferrer">MIT</a></dd>
+   <dt><a href=https://github.com/craftzdog/cm6-themes target=_blank rel="noopener noreferrer">cm6-themes</a></dt>
+   <dd><a href="https://github.com/craftzdog/cm6-themes?tab=MIT-1-ov-file" target=_blank rel="noopener noreferrer">MIT</a></dd>
+  </dl>
+  <form method=dialog>
+   <button>Cerrar</button>
+  </form>
+ </dialog>
+
+ <script type=module src=/gilpgnod.github.io.68e29dd6.js></script>
+
+
+

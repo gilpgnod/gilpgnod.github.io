@@ -4,7 +4,7 @@ import {
 import {
  defaultKeymap, history, historyKeymap, indentWithTab
 } from "@codemirror/commands"
-import { html } from "@codemirror/lang-html"
+import { javascript } from "@codemirror/lang-javascript"
 import {
  bracketMatching, defaultHighlightStyle, foldGutter, foldKeymap, indentOnInput,
  indentUnit, syntaxHighlighting
@@ -50,7 +50,7 @@ import adaptText from 'bundle-text:./adapt.js'
 // @ts-ignore
 import expandedQuestionText from 'bundle-text:./expandedQuestion.js'
 // @ts-ignore
-import questionText from 'bundle-text:./question.js'
+import stylesText from 'bundle-text:./nodstyles.css'
 
 tryCatch(
  () => {
@@ -164,7 +164,7 @@ tryCatch(
      },
       undefined)
     }),
-    html(),
+    javascript(),
    ],
   })
 
@@ -255,7 +255,7 @@ tryCatch(
    const text = encodeURIComponent(editor.state.doc.toString())
    const s = codeShowElement.checked ? "1" : "0"
    const w = windowShowElement.checked ? "1" : "0"
-   location.hash = `${s}&${w}&&${text}`
+   location.hash = `${s}&${w}&${text}`
    saveHrefUpdate(text)
   }
 
@@ -268,36 +268,78 @@ tryCatch(
   }
 
   window.onerror = function (
-  /** @type { Event | string} */ event,
-  /** @type {string} */ _src,
-  /** @type {number} */ línea,
-  /** @type {number} */ col,
-  /** @type {Error} */ error
+  /** @type {string} */ message,
+  /** @type {string} */ _url,
+  /** @type {number} */ _line,
+  /** @type {number} */ _column,
+  /** @type {Error} */ errorObject
   ) {
-   console.error(`[línea: ${línea}, columna: ${col}] `)
-   console.error(event)
-   console.error(error)
+   console.error(errorObject)
+   alert(message)
+   return true
   }
 
-  window.addEventListener('unhandledrejection', event => console.error(event))
+  window.addEventListener('unhandledrejection', event => {
+   const reason = event.reason
+   if (reason) {
+    console.error(reason)
+    if (reason.message) {
+     alert(reason.message)
+    } else {
+     alert(reason)
+    }
+   } else {
+    console.error(event)
+    alert(event)
+   }
+   event.preventDefault()
+  })
 
   /**
    * @param {string} src
    * @param {boolean} expand
    */
   function codeAdapt(src, expand) {
-   const adaption = expand ? adaptText : ""
-   const questionDefinitions = expand ? expandedQuestionText : questionText
    return (/* html */
-    `<pre id="___pre"></pre>
+    `<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GilPG Nod</title>
+<style>
+ ${stylesText}
+</style>
+<div id="____output"></div>
 <script>
- const ___pre = document.getElementById("___pre")
- const ___lo = console.log
- ${adaption}
- ${questionDefinitions}
- console.clear()
+ ${expandedQuestionText}
 </script>
-<script>{try {
+<script>
+ ${adaptText}
+</script>
+<script>
+ ______execute()
+async function ______execute() {
+ await clear()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -384,7 +426,6 @@ ${src}
 
 
 
- } catch(e) {console.error(e)}
  // Programa terminado
 }
 </script>`)

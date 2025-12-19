@@ -2,7 +2,7 @@ class WebConsole {
  constructor(outputElement) {
   this.output = outputElement
   this.groupStack = [this.output]
-  this.counts = {}
+  this.counters = {}
   this.timers = {}
  }
 
@@ -43,7 +43,7 @@ class WebConsole {
  clear() {
   this.output.textContent = ''
   this.groupStack = [this.output]
-  this.counts = {}
+  this.counters = {}
   this.timers = {}
  }
 
@@ -86,13 +86,13 @@ class WebConsole {
 
  // --- Contadores ---
  count(label = 'default') {
-  this.counts[label] = (this.counts[label] || 0) + 1
-  this._print('log', `${label}: ${this.counts[label]}`)
+  this.counters[label] = (this.counters[label] || 0) + 1
+  this._print('log', `${label}: ${this.counters[label]}`)
  }
 
  countReset(label = 'default') {
-  if (this.counts[label]) {
-   this.counts[label] = 0
+  if (this.counters[label]) {
+   this.counters[label] = 0
   } else {
    this.warn(`Count for '${label}' does not exist`)
   }

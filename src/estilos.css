@@ -1,15 +1,16 @@
 html {
  --title-font-size: calc(env(titlebar-area-height, 2rem) - 4px);
-  color-scheme: dark light;
-  font-family: sans-serif;
-  width: 100vw;
+ color-scheme: dark light;
+ font-family: sans-serif;
+ width: 100vw;
  height: 100svh;
-  box-sizing: border-box;
+ box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
 
  html {
+  --question-color: cyan;
   --autocomplete-background-color: #515151;
   --autocomplete-color: white;
   --autocomplete-active-background-color: blue;
@@ -23,6 +24,7 @@ html {
 @media (prefers-color-scheme: light) {
 
  html {
+  --question-color: #028e8e;
   --autocomplete-background-color: #ece6d9;
   --autocomplete-color: black;
   --autocomplete-active-background-color: cyan;
@@ -38,13 +40,13 @@ html {
 }
 
 body {
-  margin: 0;
-  display: flex;
+ margin: 0;
+ display: flex;
  height: 100svh;
-  width: 100vw;
-  flex-direction: column;
-  align-content: stretch;
-  box-sizing: border-box;
+ width: 100vw;
+ flex-direction: column;
+ align-content: stretch;
+ box-sizing: border-box;
 }
 
 body>header {
@@ -116,12 +118,12 @@ body>header h1 {
 }
 
 #lblabrir {
-  cursor: pointer;
+ cursor: pointer;
 }
 
 #abrir {
-  position: absolute;
-  top: -1000rem;
+ position: absolute;
+ top: -1000rem;
 }
 
 .content {

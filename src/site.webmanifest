@@ -10,6 +10,36 @@
   "window-controls-overlay"
  ],
  "description": "Desarrolla y depura aplicaciones sencillas, parecidas a Node.js, en línea.",
+ "screenshots": [
+  {
+   "src": "img/screenshot_light_wide.png",
+   "sizes": "819x467",
+   "type": "image/png",
+   "form_factor": "wide",
+   "label": "Vista horizontal, modo claro."
+  },
+  {
+   "src": "img/screenshot_dark_wide.png",
+   "sizes": "819x467",
+   "type": "image/png",
+   "form_factor": "wide",
+   "label": "Vista horizontal, modo oscuro, todos los páneles."
+  },
+  {
+   "src": "img/screenshot_light_narrow.png",
+   "sizes": "555x663",
+   "type": "image/png",
+   "form_factor": "narrow",
+   "label": "Vista vertical, modo claro."
+  },
+  {
+   "src": "img/screenshot_dark_narrow.png",
+   "sizes": "555x663",
+   "type": "image/png",
+   "form_factor": "narrow",
+   "label": "Vista vertical, modo oscuro, menú 'Archivo'."
+  }
+ ],
  "icons": [
   {
    "purpose": "any",
@@ -31,7 +61,7 @@
   },
   {
    "purpose": "maskable",
-   "sizes": "2730",
+   "sizes": "2730x2730",
    "src": "img/maskable_icon.png",
    "type": "image/png"
   },
@@ -79,7 +109,7 @@
   },
   {
    "purpose": "any",
-   "sizes": "2730",
+   "sizes": "2730x2730",
    "src": "img/maskable_icon.png",
    "type": "image/png"
   },

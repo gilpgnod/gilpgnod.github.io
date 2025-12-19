@@ -1,0 +1,129 @@
+ html {
+  color-scheme: dark light;
+  font-family: sans-serif;
+ }
+
+ @media (prefers-color-scheme: dark) {
+  html {
+   --question-color: cyan;
+  }
+ }
+
+ @media (prefers-color-scheme: light) {
+  html {
+   --question-color: #028e8e;
+  }
+ }
+
+ .log-line {
+  border-bottom: 1px solid;
+  padding: 2px 0;
+ }
+
+ .type-info {
+  color: #4fc1ff;
+ }
+
+ .type-warn {
+  color: #dcdcaa;
+  background: rgba(220, 220, 170, 0.1);
+ }
+
+ .type-error {
+  color: #f44747;
+  background: rgba(244, 71, 71, 0.1);
+  font-weight: bold;
+ }
+
+ .type-debug {
+  color: #b5cea8;
+  opacity: 0.8;
+ }
+
+ .type-question {
+  color: var(--question-color);
+  font-style: italic;
+ }
+
+ .timestamp {
+  color: #808080;
+  margin-right: 8px;
+  font-size: 11px;
+ }
+
+ .ansi-black {
+  color: #000000;
+ }
+
+ .ansi-red {
+  color: #cd3131;
+ }
+
+ .ansi-green {
+  color: #0dbc79;
+ }
+
+ .ansi-yellow {
+  color: #e5e510;
+ }
+
+ .ansi-blue {
+  color: #2472c8;
+ }
+
+ .ansi-magenta {
+  color: #bc3fbc;
+ }
+
+ .ansi-cyan {
+  color: #11a8cd;
+ }
+
+ .ansi-white {
+  color: #e5e5e5;
+ }
+
+ /* Versiones Brillantes */
+ .ansi-bright-black {
+  color: #666666;
+ }
+
+ .ansi-bright-red {
+  color: #f14c4c;
+ }
+
+ .ansi-bright-green {
+  color: #23d18b;
+ }
+
+ .ansi-bright-yellow {
+  color: #f5f543;
+ }
+
+ .ansi-bright-blue {
+  color: #3b8eea;
+ }
+
+ .ansi-bright-magenta {
+  color: #d670d6;
+ }
+
+ .ansi-bright-cyan {
+  color: #29b8db;
+ }
+
+ .ansi-bright-white {
+  color: #e5e5e5;
+ }
+
+ .ansi-bold {
+  font-weight: bold;
+ }
+
+ .ansi-italic {
+  font-style: italic;
+ }
+
+ .ansi-underline {
+  text-decoration: underline;
+ }

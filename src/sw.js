@@ -1,6 +1,6 @@
 import { manifest, version } from '@parcel/service-worker'
 
-const VERSION = "2.1"
+const VERSION = "2.2"
 
 if (self instanceof ServiceWorkerGlobalScope) {
  self.addEventListener("install",

@@ -1,6 +1,6 @@
 {
  "name": "gilpgnod.github.io",
- "version": "2.1.0",
+ "version": "2.2.0",
  "description": "Sitio para crear aplicaciones simples tipo Node.js desde navegadores.",
  "type": "module",
  "private": true,

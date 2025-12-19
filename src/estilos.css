@@ -142,21 +142,15 @@ body>header h1 {
  box-sizing: border-box;
 }
 
+#code[hidden] {
+ display: none;
+}
+
 iframe {
  flex: 1 1 0;
  min-width: 0;
  overflow: auto;
  box-sizing: border-box;
-}
-
-#consoleSec {
- flex: 1 1 0;
- overflow: auto;
- box-sizing: border-box;
-}
-
-#consoleSec[hidden] {
- display: none;
 }
 
 #code>:nth-child(2) {

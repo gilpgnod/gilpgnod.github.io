@@ -48,7 +48,7 @@
 74D:\gilpg\Documents\Sitios\gilpgnod.github.io\src\img\maskable_icon_x48.png134104638864508313 0
 98D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\@swc\helpers\_\_class_private_method_get134104747736806694 1
 75D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\globals\readme.md134104747621584097 0
-49D:\gilpg\Documents\Sitios\gilpgnod.github.io\docs134106182428194679 1
+49D:\gilpg\Documents\Sitios\gilpgnod.github.io\docs134106189507108181 1
 54D:\gilpg\Documents\Sitios\gilpgnod.github.io\gilpgnode134104657232920789 1
 106D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\@parcel\runtime-js\lib\helpers\node\js-loader.js134104747655575178 0
 104D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\parcel-reporter-static-files-copy\.eslintrc.js134104747639064974 0
@@ -228,7 +228,7 @@
 69D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\safe-buffer134104747638837864 1
 99D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\msgpackr-extract\node_modules\detect-libc134104747651215292 1
 109D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\@codemirror\language\.github\workflows\dispatch.yml134104747657255204 0
-54D:\gilpg\Documents\Sitios\gilpgnod.github.io\src\sw.js134105030719972006 0
+54D:\gilpg\Documents\Sitios\gilpgnod.github.io\src\sw.js134106189356575665 0
 91D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\type-fest\source\stringified.d.ts134104747664563259 0
 74D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\@parcel\rust\lib134104747646788979 1
 88D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\postcss-value-parser\README.md134104747636115178 0
@@ -3001,7 +3001,7 @@
 94D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\@swc\helpers\esm\_to_property_key.js134104747733385322 0
 92D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\@parcel\markdown-ansi\package.json134104747638828739 0
 105D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\@swc\helpers\esm\_ts_add_disposable_resource.js134104747733405311 0
-59D:\gilpg\Documents\Sitios\gilpgnod.github.io\docs\sw.js.map134106182427923366 0
+59D:\gilpg\Documents\Sitios\gilpgnod.github.io\docs\sw.js.map134106189507098237 0
 90D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\@swc\helpers\esm\_ts_decorate.js134104747733435319 0
 99D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\@swc\helpers\esm\_ts_dispose_resources.js134104747733469908 0
 91D:\gilpg\Documents\Sitios\gilpgnod.github.io\node_modules\@swc\helpers\esm\_ts_generator.js134104747733538847 0
@@ -3986,7 +3986,7 @@
 80D:\gilpg\Documents\Sitios\gilpgnod.github.io\docs\maskable_icon_x48.fe7b1798.png134106182411130366 0
 80D:\gilpg\Documents\Sitios\gilpgnod.github.io\docs\maskable_icon_x96.6e11bd31.png134106182411140363 0
 66D:\gilpg\Documents\Sitios\gilpgnod.github.io\docs\site.webmanifest134106182427594348 0
-55D:\gilpg\Documents\Sitios\gilpgnod.github.io\docs\sw.js134106182427594348 0
+55D:\gilpg\Documents\Sitios\gilpgnod.github.io\docs\sw.js134106189506928356 0
 55D:\gilpg\Documents\Sitios\gilpgnod.github.io\addon\hint132863115901530099 1
 55D:\gilpg\Documents\Sitios\gilpgnod.github.io\addon\lint132863115901590115 1
 57D:\gilpg\Documents\Sitios\gilpgnod.github.io\addon\search132863115901766658 1
